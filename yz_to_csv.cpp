@@ -121,11 +121,13 @@ void to_csv(bool team, int key, int val, ll ts) {
     cout << team << ',' << key << ',' << val << ',' << ts << '\n';
 }
 
+
 int main(int argc, char ** argv) {
-    assert(argc >= 2);
-    threshold = atoi(argv[1]);
-    freopen(argc >= 3 ? argv[2] : "full-game-washed", "r", stdin);
-    freopen(argc >= 4 ? argv[3] : "raw.csv", "w", stdout);
+    assert(argc >= 3);
+    const int tf = atoi(argv[1]);
+    threshold = atoi(argv[2]);
+    freopen(argc >= 4 ? argv[3] : "full-game-washed", "r", stdin);
+    freopen(argc >= 5 ? argv[4] : "raw.csv", "w", stdout);
     auto meta = readYuanzhenMetadata();
     map<int, string> id2name = meta.first;
     map<int, int> sensor2player = meta.second;
