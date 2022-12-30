@@ -74,15 +74,15 @@ ll gen_uni_lag() {
     return rand() % maxLag;
 }
 
-ifstream fin("randList");
+ifstream fin("_randList");
 ll readInt() {
-    static int tot = 999;
-    if ((++ tot) == 1000) {
+    static int tot = 998;
+    if ((++ tot) == 999) {
         tot = 0;
         system("sh ./b.sh");
         fin.close();
         fin.clear();
-        fin.open("randList");
+        fin.open("_randList");
     }
     ll ret;
     fin >> ret;

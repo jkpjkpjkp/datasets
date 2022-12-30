@@ -1,1 +1,1 @@
-python zipf.py 2 > randList # 可调参数，和delay正相关，应 > 1
+python zipf.py 2 > _randList # 可调参数，和delay正相关，应 > 1

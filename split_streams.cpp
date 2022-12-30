@@ -41,15 +41,7 @@ struct __init__ {
 
 /* default code ends here */
 
-bool chk() {
-    char c;
-    bool ret = false;
-    while ((c = getchar()) != EOF && c != ',') {
-        if (c == '0' || c == '1')
-            ret = c - '1';
-    }
-    return ret;
-}
+
 
 int main(int argc, char ** argv) {
     freopen(argc >= 2 ? argv[1] : "_res.csv", "r", stdin);
@@ -61,12 +53,7 @@ int main(int argc, char ** argv) {
     f1 << "key,value,eventTime,arrivalTime,processedTime" << '\n';
     f2 << "key,value,eventTime,arrivalTime,processedTime" << '\n';
 
-    bool flag = chk();
-    char c;
-    while ((c = getchar()) != EOF) {
-        (flag ? f1 : f2) << c;
-        if (c == '\n') {
-            flag = chk();
-        }
+    while (getline(cin, s)) {
+        (s[0] == '1' ? f1 : f2) << (s.substr(2, 1000000)) << '\n';
     }
 }
