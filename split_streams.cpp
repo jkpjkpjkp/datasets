@@ -52,7 +52,7 @@ bool chk() {
 }
 
 int main(int argc, char ** argv) {
-    freopen(argc >= 2 ? argv[1] : "res.csv", "r", stdin);
+    freopen(argc >= 2 ? argv[1] : "_res.csv", "r", stdin);
     ofstream f1(argc >= 3 ? argv[2] : "sTuple.csv");
     ofstream f2(argc >= 4 ? argv[3] : "rTuple.csv");
     string s;

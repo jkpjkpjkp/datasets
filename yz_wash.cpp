@@ -45,7 +45,7 @@ struct __init__ {
 
 int main(int argc, char ** argv) {
     freopen(argc >= 2 ? argv[1] : "full-game", "r", stdin);
-    freopen(argc >= 3 ? argv[2] : "full-game-washed", "w", stdout);
+    freopen(argc >= 3 ? argv[2] : "_full-game-washed", "w", stdout);
     string s;
     while (getline(cin, s)) {
         bool flag = false;

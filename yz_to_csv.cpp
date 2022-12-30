@@ -126,8 +126,8 @@ int main(int argc, char ** argv) {
     assert(argc >= 3);
     const int tf = atoi(argv[1]);
     threshold = atoi(argv[2]);
-    freopen(argc >= 4 ? argv[3] : "full-game-washed", "r", stdin);
-    freopen(argc >= 5 ? argv[4] : "raw.csv", "w", stdout);
+    freopen(argc >= 4 ? argv[3] : "_full-game-washed", "r", stdin);
+    freopen(argc >= 5 ? argv[4] : "_raw.csv", "w", stdout);
     auto meta = readYuanzhenMetadata();
     map<int, string> id2name = meta.first;
     map<int, int> sensor2player = meta.second;
@@ -141,7 +141,7 @@ int main(int argc, char ** argv) {
         if (!sensor2player.count(sensorId))
             continue;
         int PlayerId = sensor2player[sensorId];
-        ll Timestamp = (a[1] - 10629342490369878ll) / (int)(1e6);
+        ll Timestamp = (a[1] - 10629342490369878ll) / (ll)(1e6) / tf;
         to_csv((PlayerId <= 8), (node(a[2], a[3], a[4])).zone(), a[0], Timestamp);
     }
 }
